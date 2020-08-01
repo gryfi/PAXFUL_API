@@ -25,23 +25,20 @@ class BookList(APIView):
                 return Response(serializer.data,status=status.HTTP_200_OK)
             else:
                 return Response(serializer.data,status=status.HTTP_204_NO_CONTENT)
-        except:
-            print ("Unexpected error:", sys.exc_info()[0])
+        except Exception:
+            return Response("An Unexpected error occured, please try again later",status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class BookDetail(APIView):
     """
     Retrieve a product instance with details
     """
-    def get_object(self, pk):
+    def get(self, request, pk, format=None):
         try:
-            return Book.objects.get(pk=pk)
+            book1 = Book.objects.get(pk=pk)
+            serializer = BookDetailSerializer(book1)
+            return Response(serializer.data)
         except Book.DoesNotExist:
             raise Http404
-        except:
-            print ("An Unexpected error occured:", sys.exc_info()[0])
-
-    def get(self, request, pk, format=None):
-        book1 = self.get_object(pk)
-        serializer = BookDetailSerializer(book1)
-        return Response(serializer.data)
+        except Exception:
+            return Response("An Unexpected error occured, please try again later",status=status.HTTP_500_INTERNAL_SERVER_ERROR)
