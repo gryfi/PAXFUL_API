@@ -4,7 +4,7 @@
 
 A simple WebAPP for records of Books built based on Restful API Standards
 
-Technology Used: 
+Technology Used:
 
 - Django Rest Framework 3.11
 
@@ -12,7 +12,7 @@ Technology Used:
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine. 
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
@@ -29,16 +29,16 @@ Once Anaconda is installed and setup, we need to create an environment and insta
 
 `conda create --name Django --file requirements.txt`
 
-requirements.txt file is located in the root of the repository. 
+requirements.txt file is located in the root of the repository.
 
 Once created, activate the environment by running the following command:
 
 `conda activate Django`
 
 
-We are all set for now. 
+We are all set for now.
 
-Using your CLI navigate to the directory where you want to place your copy of the project using 
+Using your CLI navigate to the directory where you want to place your copy of the project using
 
 `cd <directory_path>`
 
@@ -64,7 +64,7 @@ Now we are all set to get our application up and running.
 
 ## Running App
 
-Run the App using the simple command: 
+Run the App using the simple command:
 
 `python manage.py runserver`
 
@@ -79,10 +79,10 @@ Depending on your combination of Hardware and Software, the following paths may 
 
 
 
-A sample response may look as follows: - 
+A sample response may look as follows: -
 
 `
-   
+
     {
         "id": 6,
         "title": "A Passage to India"
@@ -109,16 +109,16 @@ A sample response may look as follows: -
     },
 `
 
- - In case of no Book records in the database, 
-an empty list will be returned with an __HTTP__ Status code of __204__, indicating absence of content.  - 
+ - In case of no Book records in the database,
+an empty list will be returned with an __HTTP__ Status code of __204__, indicating absence of content.  -
 
 
-2.For getting the Book detail of the single Book, in accordance with API Design Standards, we will use the following URL patter where we replace <id> with book id we are interested in getting. : 
+2.For getting the Book detail of the single Book, in accordance with API Design Standards, we will use the following URL patter where we replace <id> with book id we are interested in getting. :
 
 `http://127.0.0.1:8000/api/v1/books/<book_id>`
 
- 
-Hence for getting Book details of Book with id 2, we use the following URL. 
+
+Hence for getting Book details of Book with id 2, we use the following URL.
 
 
 
@@ -130,25 +130,25 @@ Hence for getting Book details of Book with id 2, we use the following URL.
  A sample response may look as follows:
 
 
-`
 
-    
+
+
     "id": 2,
     "title": "One Hundred Years of Solitude",
     "author": {
         "id": 2,
         "name": "Mr. David Smith"
     }
-`
+
 
 
 
 
  - In case of an Book record not existing for
-the given book id, following response will be 
-returned with a status code of 
-be returned with an __HTTP__ Status code of __404__, indicating absence of requested 
-content. 
+the given book id, following response will be
+returned with a status code of
+be returned with an __HTTP__ Status code of __404__, indicating absence of requested
+content.
 
 
 
@@ -166,7 +166,7 @@ content.
 
 
 In the case of any errors, the exception handling
-built into the system will catch the exception 
+built into the system will catch the exception
 and provide the following response.
 
 `
@@ -177,9 +177,9 @@ and provide the following response.
 
 ## Running the tests
 
-Tests are located in the 
+Tests are located in the
 
-_PAXFUL_REST/BOOK_REST/tests_ 
+_PAXFUL_REST/BOOK_REST/tests_
 
 
 However, they can run directly from the project root folder through the following command:
@@ -191,8 +191,35 @@ However, they can run directly from the project root folder through the followin
 
 
 `
-There are a total of 6 test cases. Detailed comm
-ents on the tests are found inside the relevant .py files.
+There are a total of 6 test cases. Detailed comments on the tests are found inside the relevant .py files.
+
+## Seeding Sample Data into the database
+
+A python script titled 'SampleData_Seeding.py' has been created and placed in PAXFUL_REST Directory. This script seeds artificial sample data into the Database.
+
+Example Usage may be as follows:
+  - Example Usage for seeding 10 records(default argument value)
+
+     python SampleData_Seeding.py
 
 
+  - Example Usage for seeding 10 records(default argument value)
 
+    python SampleData_Seeding.py -delete True
+
+
+## Notes
+
+The app was developed on a machine with Linux-64 based OS. Although the app has been testes on Windows 10 based machine and works as expected, some errors may be encountered when running on any other OS or different version of Anaconda packages.
+
+
+Therefore, we specify the main requirements as follows:
+
+    - Anaconda - 4.8.3
+    - Python - 3.6
+    - Django Rest Framework - 3.11
+    - Django 2.1
+    - Faker 4.1.1
+
+In case of any unexpected errors, please feel free to contact me on the following e-mail address, I will be available immediately:
+  <abdul.wahab@ut.ee>

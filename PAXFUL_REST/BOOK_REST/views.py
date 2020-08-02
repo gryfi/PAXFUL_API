@@ -7,7 +7,6 @@ from BOOK_REST.models import Book
 from BOOK_REST.serializers import BookSerializer
 from BOOK_REST.serializers import BookDetailSerializer
 from django.http import HttpResponse, Http404, HttpResponseBadRequest
-import sys
 
 
 class BookList(APIView):

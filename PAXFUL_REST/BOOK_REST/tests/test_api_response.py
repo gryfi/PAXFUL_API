@@ -18,25 +18,26 @@ from BOOK_REST.serializers import BookSerializer
 """
 class RetrievalSuccess(TestCase):
     def setUp(self):
-        book_name = 'For Whom the bell Tolls'
-        author_name = "Anna Lauda"
+        book_name1 = 'Anna Karenina'
+        book_name2 = 'War and Peace'
+        author_name = "Leo Tolstoy"
         author = Author.objects.get_or_create(name=author_name)[0]
-        book = Book.objects.get_or_create(title=book_name, author=author)[0]
-        book = BookSerializer(book)
+        Book.objects.get_or_create(title=book_name1, author=author)
+        Book.objects.get_or_create(title=book_name2,author=author)
 
-    def test_booklist_retrieval_success_NonEmptyList(self):
+    def test_booklist_retrieval_success_CorrectListSize(self):
         url = reverse('booklist')
         response = self.client.get(url)
         self.assertEquals(response.status_code,status.HTTP_200_OK)
-        self.assertNotEquals(response.data,[])
+        self.assertEquals(len(response.data),2)
 
 
     def test_bookdetail_retrieval_concrete_success(self):
         url = reverse('bookdetail',kwargs={"pk":1})
         response = self.client.get(url)
-        self.assertEquals(response.data['title'],'For Whom the bell Tolls')
+        self.assertEquals(response.data['title'],'Anna Karenina')
         self.assertEquals(response.data['id'],1)
-        self.assertEquals(response.data['author']['name'],"Anna Lauda")
+        self.assertEquals(response.data['author']['name'],"Leo Tolstoy")
         self.assertEquals(response.status_code,status.HTTP_200_OK)
 
 

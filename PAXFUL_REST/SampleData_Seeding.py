@@ -33,7 +33,11 @@ def add_Author():
 def populate(N=10):
     for entry in range(N):
         author = add_Author()
-        book = Book.objects.get_or_create(title=random.choice(books_list), author=author)
+        if entry == 2:
+            book = Book.objects.get_or_create(title=random.choice(books_list), author=author)
+            book = Book.objects.get_or_create(title=random.choice(books_list), author=author)
+        else:
+            book = Book.objects.get_or_create(title=random.choice(books_list), author=author)
 
 
 """
@@ -62,10 +66,8 @@ if __name__ == '__main__':
         else:
             populate(n_samples)
         print("DB filled with sample Data")
-    elif delete == True:
+    else:
         print("Deleting any data in Database")
         Book.objects.all().delete()
         Author.objects.all().delete()
         print("Deleted data in Database")
-    else:
-        pass
