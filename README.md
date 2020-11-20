@@ -26,6 +26,8 @@ The necessary requirements are having Python 3,pip and git client configured on 
     git clone https://github.com/abdul0214/PAXFUL_API
 
 
+The following:
+
     cd PAXFUL_API
 
 #### Step 2    
