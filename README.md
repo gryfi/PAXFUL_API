@@ -27,17 +27,23 @@ Once cloned, move inside the directory using CLI.
 
 run following command to create a virtual env
 
-`python3 -m venv env --no-site-packages`
+Linux/macOS `python3 -m venv env --no-site-packages`
+
+Windows: `py -m venv env`
 
 
 Then, run the following to activate the virtual
 
-`source env/bin/activate`
+Linux/macOS : `source env/bin/activate`
+
+Windows: `.\env\Scripts\activate`
 
 
 install all the required packages by running the following command:
 
-`pip install -r requirements.txt`
+Linux/macOS : `pip install -r requirements.txt`
+
+Windows: `pip install -r requirements.txt`
 
 
 
