@@ -16,46 +16,29 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The necessary requirements are having Anaconda toolkit installed on your machine.
-
-Based on your OS, Anaconda toolkit can be downloaded from the following link:
-
- <https://www.anaconda.com/products/individual>
-
-Make sure to find the installation instructions and install Anaconda correctly have it added to  PATH environment variable.
-
-
-Once Anaconda is installed and setup, we need to create an environment and install required packages. This can be done by running the following command in the terminal:
-
-`conda create --name Django --file requirements.txt`
-
-requirements.txt file is located in the root of the repository.
-
-Once created, activate the environment by running the following command:
-
-`conda activate Django`
-
-
-We are all set for now.
-
-Using your CLI navigate to the directory where you want to place your copy of the project using
-
-`cd <directory_path>`
-
-Then download your copy of the project from GitHub using the following command:
+The necessary requirements are having Python 3 and pip toolkit installed on your machine.
 
 
 `git clone https://github.com/abdul0214/PAXFUL_API`
 
-OR Download a zipped copy from:
+Once cloned, move inside the directory using CLI.
 
-<https://github.com/abdul0214/PAXFUL_API>
+`cd PAXFUL_API`
 
- If you downloaded a zipped copy, the unzip it using a tool of your choice.
+run following command to create a virtual env
 
-Once cloned/downloaded, move inside the directory using CLI.
+`python3 -m venv env --no-site-packages`
 
-`cd PAXFUL_API/PAXFUL_REST`
+
+Then, run the following to activate the virtual
+
+`source env/bin/activate`
+
+
+install all the required packages by running the following command:
+
+`pip install -r requirements.txt`
+
 
 
 Now we are all set to get our application up and running.
@@ -65,6 +48,10 @@ Now we are all set to get our application up and running.
 ## Running App
 
 Run the App using the simple command:
+
+`cd manage.py runserver`
+
+
 
 `python manage.py runserver`
 
