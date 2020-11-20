@@ -16,34 +16,40 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The necessary requirements are having Python 3 and pip toolkit installed on your machine.
+
+#### Step 1
 
 
-`git clone https://github.com/abdul0214/PAXFUL_API`
+The necessary requirements are having Python 3,pip and git client configured on your machine.
 
-Once cloned, move inside the directory using CLI.
 
-`cd PAXFUL_API`
+    `git clone https://github.com/abdul0214/PAXFUL_API`
+
+
+    `cd PAXFUL_API`
+
+#### Step 2    
 
 run following command to create a virtual env
 
-Linux/macOS `python3 -m venv env --no-site-packages`
+    Linux/macOS `python3 -m venv env --no-site-packages`
 
-Windows: `py -m venv env`
+    Windows: `py -m venv env`
 
 
 Then, run the following to activate the virtual
 
-Linux/macOS : `source env/bin/activate`
+    Linux/macOS : `source env/bin/activate`
 
-Windows: `.\env\Scripts\activate`
+    Windows: `.\env\Scripts\activate`
 
+#### Step 3
 
 install all the required packages by running the following command:
 
-Linux/macOS : `pip install -r requirements.txt`
+    Linux/macOS : `pip install -r requirements.txt`
 
-Windows: `pip install -r requirements.txt`
+    Windows: `pip install -r requirements.txt`
 
 
 
@@ -55,7 +61,7 @@ Now we are all set to get our application up and running.
 
 Run the App using the simple command:
 
-`python manage.py runserver`
+    `python manage.py runserver`
 
 
 Make sure you have port 8000 available on your PC.
