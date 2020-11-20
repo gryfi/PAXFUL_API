@@ -49,11 +49,8 @@ Now we are all set to get our application up and running.
 
 Run the App using the simple command:
 
-`cd manage.py runserver`
-
-
-
 `python manage.py runserver`
+
 
 Make sure you have port 8000 available on your PC.
 
