@@ -34,7 +34,7 @@ The following:
 
 run following command to create a virtual env
 
-    Linux/macOS python3 -m venv env --no-site-packages
+    Linux/macOS: python3 -m venv env --no-site-packages
 
     Windows: py -m venv env
 
